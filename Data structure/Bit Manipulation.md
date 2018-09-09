@@ -49,7 +49,8 @@ object_property_bit_array |= (1 << 7)
 Such (1 << 0), ... (1 << 7) is called bit mask. 
 
 To check the boolean property at index 6th is set
-```if (object_property_bit_array & (1 << 6)) {
+```
+if (object_property_bit_array & (1 << 6)) {
 std::cout << "6th boolean property is true" << std::endl;
 }
 ```
