@@ -16,7 +16,8 @@ Now that you have learnt about bitwise operators, you must have realized & is ve
 
 Example :
 
-   ```2  |   1  = 3
+   ```
+   2  |   1  = 3
    2  ||  1  = true
    2   &  1  =  0
    2  &&  1  = true
@@ -25,3 +26,30 @@ Example :
 Very similar to the fact that you can rewrite ```A = A + B as A += B```, you can rewrite 
 ```A = A | B as A |= B``` or
 ```A = A & B as A &= B```
+
+# Bit mask
+Let say we design an object with 8 boolean properties. Instead of declaring 8 boolean variables, we can use a bit array to store 8 boolean properties. 
+
+```
+For example
+short object_property_bit_array = 0;
+```
+Set each of boolean property as below
+```
+object_property_bit_array |= (1 << 0) --> set boolean property at index 0 is true.
+object_property_bit_array |= (1 << 1) --> set boolean property at index 1 is true.
+object_property_bit_array |= (1 << 2)
+object_property_bit_array |= (1 << 3)
+object_property_bit_array |= (1 << 4)
+object_property_bit_array |= (1 << 5)
+object_property_bit_array |= (1 << 6)
+object_property_bit_array |= (1 << 7)
+```
+
+Such (1 << 0), ... (1 << 7) is called bit mask. 
+
+To check the boolean property at index 6th is set
+```if (object_property_bit_array & (1 << 6)) {
+std::cout << "6th boolean property is true" << std::endl;
+}
+```
